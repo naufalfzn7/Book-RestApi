@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URI, { dbName: "bookAPI" });
+    await mongoose.connect(process.env.MONGO_URI, {
+      dbName: "bookAPI",
+      autoIndex: true,
+    });
     console.log("MongoDB connected to bookAPI database successfully");
   } catch (error) {
     console.error("MongoDB connection failed:", error);

@@ -1,4 +1,4 @@
-const asyncHandler = async (fn) => {
+const asyncHandler = (fn) => {
   return (req, res, next) => {
     Promise.resolve(fn(req, res, next)).catch((e) => {
       const statusCode = e.statusCode || 500;
@@ -10,4 +10,4 @@ const asyncHandler = async (fn) => {
   };
 };
 
-module.exports = asyncHandler;
+module.exports = asyncHandler; // Logic to get all books
